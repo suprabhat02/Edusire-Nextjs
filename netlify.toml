@@ -1,0 +1,17 @@
+# Netlify Configuration for EDUSIRES Next.js Static Site
+
+[build]
+  command = "pnpm build"
+  publish = "out"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[dev]
+  command = "pnpm dev"
+  port = 3000
+
+[context.production.environment]
+  NODE_ENV = "production"
