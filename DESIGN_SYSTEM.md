@@ -112,8 +112,8 @@ color: var(--color-text-primary);
 ### Border Radius Scale
 
 ```css
---radius-sm: 0.375rem (6px) --radius-md: 0.5rem (8px) --radius-lg: 0.75rem
-  (12px) --radius-xl: 1rem (16px) --radius-2xl: 1.5rem (24px);
+--radius-sm: 0.25rem (4px) --radius-md: 0.375rem (6px) --radius-lg: 0.5rem (8px)
+  --radius-xl: 0.625rem (10px) --radius-2xl: 0.75rem (12px);
 ```
 
 ### Shadows
@@ -147,7 +147,7 @@ Handled by `next-themes` and Tailwind's `.dark` class selector. No manual dark m
 
 ### Location
 
-Footer component now includes an "Accent" color switcher with Blue/Green options.
+Appearance controls now live in the navigation: inside a desktop dropdown next to the Contact link, and inside the mobile menu below the Contact link.
 
 ### Functionality
 
@@ -164,7 +164,7 @@ Located in: `components/accent-switcher.tsx`
 ```tsx
 import { AccentSwitcher } from "@/components/accent-switcher";
 
-// Used in Footer
+// Used inside Navigation appearance controls
 <AccentSwitcher />;
 ```
 

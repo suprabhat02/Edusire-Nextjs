@@ -423,7 +423,7 @@ export default function OfficeAppliancesPage() {
       {/* Download Catalog */}
       <section className="py-20">
         <div className="container mx-auto px-6 md:px-8">
-          <div className="bg-primary text-primary-foreground rounded-2xl p-12 text-center">
+          <div className="bg-primary text-primary-foreground rounded-xl p-12 text-center">
             <h2 className="text-4xl font-bold mb-6">
               Download Our Complete Catalog
             </h2>

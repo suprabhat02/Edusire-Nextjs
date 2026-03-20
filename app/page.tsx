@@ -253,9 +253,9 @@ export default function HomePage() {
               <img
                 src="/placeholder.svg?height=500&width=400"
                 alt="H.K. Verma - Founder"
-                className="rounded-2xl border-2 border-border"
+                className="rounded-xl border-2 border-border"
               />
-              <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-4 rounded-xl">
+              <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-4 rounded-lg">
                 <div className="text-center">
                   <div className="text-2xl font-bold">500+</div>
                   <div className="text-sm">Students Mentored</div>

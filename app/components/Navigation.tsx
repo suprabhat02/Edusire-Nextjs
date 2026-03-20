@@ -1,19 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, Sun, Moon, BookOpen, Briefcase, Leaf } from "lucide-react";
+import { Menu, SlidersHorizontal, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { AppearanceControls } from "../../components/appearance-controls";
 import {
-  getStoredThemeMode,
-  resolveThemeMode,
-  setThemeMode as saveThemeMode,
-  subscribeAppearanceChange,
-  type ThemeMode,
-} from "@/lib/appearance";
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -27,16 +26,7 @@ const navItems = [
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
-  const [themeMode, setThemeMode] = useState<ThemeMode>("system");
   const pathname = usePathname();
-
-  useEffect(() => {
-    setThemeMode(getStoredThemeMode());
-
-    return subscribeAppearanceChange(() => {
-      setThemeMode(getStoredThemeMode());
-    });
-  }, []);
 
   const isActivePath = (href: string) => {
     if (href === "/") {
@@ -60,9 +50,9 @@ export default function Navigation() {
             />
           </Link>
 
-          {/* Right Side: Links + Theme Toggle */}
+          {/* Right Side: Links + Appearance */}
           <div className="flex items-center justify-end gap-2 min-w-0">
-            <div className="hidden lg:flex items-center space-x-1">
+            <div className="hidden lg:flex items-center gap-1">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
@@ -74,26 +64,35 @@ export default function Navigation() {
                       : "text-muted-foreground hover:bg-accent hover:text-accent-foreground",
                   )}
                 >
-                  {/* {item.icon && <item.icon className="w-4 h-4 mr-1" />} */}
                   {item.name}
                 </Link>
               ))}
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="outline"
+                    className="h-9 rounded-md border-border/70 px-3"
+                  >
+                    <SlidersHorizontal className="h-4 w-4" />
+                    Appearance
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent
+                  align="end"
+                  className="w-72 rounded-lg border-2 border-border/80 bg-card p-3"
+                >
+                  <div className="mb-3">
+                    <p className="text-sm font-semibold text-foreground">
+                      Appearance
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      Theme mode and accent color
+                    </p>
+                  </div>
+                  <AppearanceControls />
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => {
-                const nextMode =
-                  resolveThemeMode(themeMode) === "dark" ? "light" : "dark";
-                setThemeMode(nextMode);
-                saveThemeMode(nextMode);
-              }}
-              className="shrink-0"
-            >
-              <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-              <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-              <span className="sr-only">Toggle theme</span>
-            </Button>
 
             {/* Mobile menu button */}
             <Button
@@ -127,10 +126,20 @@ export default function Navigation() {
                   )}
                   onClick={() => setIsOpen(false)}
                 >
-                  {/* {item.icon && <item.icon className="w-4 h-4 mr-2" />} */}
                   {item.name}
                 </Link>
               ))}
+              <div className="mt-3 rounded-lg border border-border/70 bg-card p-3">
+                <div className="mb-3">
+                  <p className="text-sm font-semibold text-foreground">
+                    Appearance
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    Theme mode and accent color
+                  </p>
+                </div>
+                <AppearanceControls />
+              </div>
             </div>
           </div>
         )}

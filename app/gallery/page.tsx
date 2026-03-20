@@ -52,7 +52,7 @@ export default function GalleryPage() {
               A visual showcase of our journey across education, office
               solutions, and Ayurvedic wellness.
             </p>
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/30 px-4 py-2 text-sm">
+            <div className="inline-flex items-center gap-2 rounded-md border border-white/30 px-4 py-2 text-sm">
               <Camera className="w-4 h-4" />
               Real initiatives. Real impact. Real outcomes.
             </div>
@@ -85,7 +85,7 @@ export default function GalleryPage() {
                   {placeholders.map((item) => (
                     <div
                       key={`${section.title}-${item}`}
-                      className="group aspect-[4/3] rounded-xl border-2 border-border/70 bg-muted/40 p-4 flex flex-col items-center justify-center text-center transition-colors hover:border-primary/40"
+                      className="group aspect-[4/3] rounded-lg border-2 border-border/70 bg-muted/40 p-4 flex flex-col items-center justify-center text-center transition-colors hover:border-primary/40"
                     >
                       <Camera className="w-8 h-8 text-muted-foreground mb-2" />
                       <p className="font-medium">{section.title}</p>

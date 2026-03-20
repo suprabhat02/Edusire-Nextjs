@@ -54,7 +54,7 @@ export default function ContactPage() {
               Have questions about education, office solutions, or Ayurvedic
               products? We are here to help.
             </p>
-            <div className="inline-flex items-center gap-2 rounded-full border border-white/30 px-4 py-2 text-sm">
+            <div className="inline-flex items-center gap-2 rounded-md border border-white/30 px-4 py-2 text-sm">
               <MessageCircle className="w-4 h-4" />
               Quick support. Clear guidance. Trusted team.
             </div>
@@ -171,7 +171,7 @@ export default function ContactPage() {
                     <p>Sunday: By appointment only</p>
                   </div>
                 </div>
-                <div className="rounded-xl border-2 border-dashed border-border p-4 text-sm text-muted-foreground">
+                <div className="rounded-lg border-2 border-dashed border-border p-4 text-sm text-muted-foreground">
                   For urgent support, mention your concern in the message and
                   request a priority callback.
                 </div>

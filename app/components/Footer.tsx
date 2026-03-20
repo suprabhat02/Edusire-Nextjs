@@ -1,16 +1,6 @@
 import Link from "next/link";
-import {
-  FacebookIcon,
-  TwitterIcon,
-  InstagramIcon,
-  YoutubeIcon,
-  Phone,
-  Mail,
-  MapPin,
-} from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import Image from "next/image";
-import { AccentSwitcher } from "@/components/accent-switcher";
-import { ThemeModeSwitcher } from "@/components/theme-mode-switcher";
 
 export default function Footer() {
   return (
@@ -30,11 +20,19 @@ export default function Footer() {
               through quality education, office solutions, and authentic
               ayurvedic products.
             </p>
-            <div className="flex space-x-4">
-              <FacebookIcon className="w-5 h-5 text-muted-foreground hover:text-primary cursor-pointer" />
-              <TwitterIcon className="w-5 h-5 text-muted-foreground hover:text-primary cursor-pointer" />
-              <InstagramIcon className="w-5 h-5 text-muted-foreground hover:text-primary cursor-pointer" />
-              <YoutubeIcon className="w-5 h-5 text-muted-foreground hover:text-primary cursor-pointer" />
+            <div className="flex flex-wrap gap-4 text-sm font-medium text-muted-foreground">
+              <span className="cursor-pointer transition-colors hover:text-primary">
+                Facebook
+              </span>
+              <span className="cursor-pointer transition-colors hover:text-primary">
+                Twitter
+              </span>
+              <span className="cursor-pointer transition-colors hover:text-primary">
+                Instagram
+              </span>
+              <span className="cursor-pointer transition-colors hover:text-primary">
+                YouTube
+              </span>
             </div>
           </div>
 
@@ -107,14 +105,6 @@ export default function Footer() {
         </div>
 
         <div className="border-t mt-8 pt-8 space-y-6">
-          <div className="flex flex-col items-center justify-center gap-3 rounded-xl border-2 border-border/70 bg-card p-4">
-            <p className="text-sm font-medium text-foreground">Appearance</p>
-            <div className="flex flex-col sm:flex-row items-center gap-3">
-              <ThemeModeSwitcher />
-              <AccentSwitcher />
-            </div>
-          </div>
-
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-muted-foreground text-sm">
               © {new Date().getFullYear()} EDUSIRES. All rights reserved.

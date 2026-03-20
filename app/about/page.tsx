@@ -194,9 +194,9 @@ export default function AboutPage() {
               <img
                 src="/placeholder.svg?height=600&width=500"
                 alt="H.K. Verma - Founder"
-                className="rounded-2xl border-2 border-border"
+                className="rounded-xl border-2 border-border"
               />
-              <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-6 rounded-xl">
+              <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-6 rounded-lg">
                 <div className="text-center">
                   <div className="text-3xl font-bold">2018</div>
                   <div className="text-sm">Founded EDUSIRES</div>
