@@ -74,7 +74,7 @@ export default function Navigation() {
                       : "text-muted-foreground hover:bg-accent hover:text-accent-foreground",
                   )}
                 >
-                  {item.icon && <item.icon className="w-4 h-4 mr-1" />}
+                  {/* {item.icon && <item.icon className="w-4 h-4 mr-1" />} */}
                   {item.name}
                 </Link>
               ))}
@@ -127,7 +127,7 @@ export default function Navigation() {
                   )}
                   onClick={() => setIsOpen(false)}
                 >
-                  {item.icon && <item.icon className="w-4 h-4 mr-2" />}
+                  {/* {item.icon && <item.icon className="w-4 h-4 mr-2" />} */}
                   {item.name}
                 </Link>
               ))}
